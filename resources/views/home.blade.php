@@ -9,7 +9,7 @@
 <body>
 
     @auth
-    <p>    congrats you are logged in.</p>
+    <p>congrats you are logged in.</p>
     <form action="/logout" method="POST">
      @csrf
      <button>Log out</button>
@@ -22,6 +22,16 @@
             <textarea name="body" placeholder="body contenet ......"></textarea>
             <button>Save Post</button>
         </form>
+    </div>
+
+    <div style="border: 3px solid black">
+     <h2>All Posts</h2>
+     @foreach($posts as $post)
+     <div style="background-color: gray; padding: 10px; margin: 10px;">
+        <h3>{{$post['title']}}</h3>
+        {{$post['body']}}
+     </div>
+    @endforeach
     </div>
     @else
     <div style="border: 3px solid black">

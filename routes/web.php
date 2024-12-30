@@ -19,3 +19,6 @@ Route::post('/login', [UserController::class, 'login']);
 
 //blog post related routes
 Route::post('/create-post', [PostController::class, 'createPost']);
+Route::get('edit-post/{post}', [PostController::class, 'ShowEditScreen']);
+Route::put('edit-post/{post}', [PostController::class, 'actuallyUpdatePost']);
+Route::delete('delete-post/{post}', [PostController::class, 'deletePost']);
